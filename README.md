@@ -97,6 +97,7 @@ int main()
 <br>
 {
     char s[] = "The lenght of the string.";
+<br>
     int i;
 
     for (i = 0; s[i] != '\0'; ++i);
