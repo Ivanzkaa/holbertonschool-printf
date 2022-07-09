@@ -1,5 +1,5 @@
 <head>
-<title>printf.c</title>
+<h1>printf.c</h1>
 </head>
 <body>
 <h3>In this project we are creating our own printf functions and manpage writen in the C programming language. The fucntions the we create will produce an output of what the format specifies.</h3>
