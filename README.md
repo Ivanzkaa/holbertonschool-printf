@@ -91,7 +91,7 @@
 </table>
 <h3>Example</h3>
 <h4>Printing the length of a string</h4>
-#include <stdio.h>
+ #include <stdio.h>
 int main() {
     char s[] = "The lenght of the string.";
     int i;
