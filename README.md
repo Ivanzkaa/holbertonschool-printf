@@ -2,7 +2,7 @@
 <h1>printf.c</h1>
 </head>
 <body>
-<h3>In this project we are creating our own printf functions and manpage writen in the C programming language. The fucntions the we create will produce an output of what the format specifies.</h3>
+<h3>In this project we are creating our own printf functions and manpage writen in the C programming language. The functions the we create will produce an output of what the format specifies.</h3>
 <ul>
 <li>Our repository includes our main functions.</li>
 <li>The header file in which contains our prototypes and a general knowlegde of the c program that we have learned.</li>
@@ -10,6 +10,51 @@
 <li>We have to include “stdio.h” file in the C program to make use of the printf() library functions in C language.</li>
 </ul>
 <br>
+<h3>Formating options</h3>
+<table>
+<tr>
+<td>%c</td>
+<td>character</td>
+</tr
+<tr>
+<td>%d</td>
+<td>decimal (integer) number (base 10)</td>
+</tr>
+<td>%e</td>
+<td>expotential floting-point number</td>
+<tr>
+<td>%f</td>
+<td>flotating-point number</td>
+</tr>
+<tr>
+<td>%i</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>octal number</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>a string of characters</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>unisgned decimal (integer) number</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>number in hexadecimal</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>print a percent sign</td>
+</tr>
+<tr>
+<td>\%</td>
+<td>print a percent sign</td>
+</tr>
+</table>
 <h3>Project requirements</h3>
 <h4>General</h4>
 <ul>
