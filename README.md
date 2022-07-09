@@ -101,7 +101,7 @@ int main()
     
     printf("Length of the string: %d", i);
     return 0;
-}</P>
+}</p>
 <h4>Output</h4>
 Length of the string: 25
 <h3>Project requirements</h3>
