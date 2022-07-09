@@ -9,7 +9,6 @@
 <li>In C programming language, printf() function is used to print the (“character, string, float, integer, octal and hexadecimal values”) onto the output screen.</li>
 <li>We have to include “stdio.h” file in the C program to make use of the printf() library functions in C language.</li>
 </ul>
-<br>
 <h3>Formating options</h3>
 <table>
 <tr>
