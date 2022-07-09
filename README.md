@@ -92,7 +92,8 @@
 <h3>Example</h3>
 <h4>Printing the length of a string</h4>
 <p> #include <stdio.h>
-int main() {
+int main()
+{
     char s[] = "The lenght of the string.";
     int i;
 
