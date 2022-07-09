@@ -12,6 +12,10 @@
 <h3>Formating options</h3>
 <table>
 <tr>
+<th>flag</th>
+<th>functions</th>
+</tr>
+<tr>
 <td>%c</td>
 <td>character</td>
 </tr
