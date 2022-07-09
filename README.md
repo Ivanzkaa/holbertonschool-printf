@@ -54,6 +54,41 @@
 <td>print a percent sign</td>
 </tr>
 </table>
+<h3>Printf special characters</h3>
+<table>
+<tr>
+<td>\a</td>
+<td>audible alert</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>backspace</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>form feed</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>newline</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>carriage return</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>tab</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>vertical tab</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>backlash</td>
+</tr>
+</table>
 <h3>Project requirements</h3>
 <h4>General</h4>
 <ul>
