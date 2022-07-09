@@ -1,5 +1,5 @@
 <head>
-<title>_printf.c</title>
+<title>printf.c</title>
 </head>
 <body>
 <h3>In this project we are creating our own printf functions and manpage writen in the C programming language. The fucntions the we create will produce an output of what the format specifies.</h3>
@@ -12,7 +12,6 @@
 <br>
 <h3>Project requirements</h3>
 <h4>General</h4>
-<br>
 <ul>
 <li>Allowed editors: vi, vim, emacs</li>
 <li>All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89</li>
