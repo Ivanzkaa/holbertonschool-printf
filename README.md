@@ -89,6 +89,20 @@
 <td>backlash</td>
 </tr>
 </table>
+<h3>Example</h3>
+<h4>Printing the length of a string</h4>
+#include <stdio.h>
+int main() {
+    char s[] = "The lenght of the string.";
+    int i;
+
+    for (i = 0; s[i] != '\0'; ++i);
+    
+    printf("Length of the string: %d", i);
+    return 0;
+}
+<h4>Output</h4>
+Length of the string: 25
 <h3>Project requirements</h3>
 <h4>General</h4>
 <ul>
