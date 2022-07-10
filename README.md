@@ -112,6 +112,7 @@ Length of the string: 25
 int _printf(const char *format, ...);
 <h3>Compilation</h3>
 This is what we will use to compile the code
+<br>
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 <h3>Files and their description</h3>
 <table>
