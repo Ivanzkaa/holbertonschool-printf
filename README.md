@@ -121,6 +121,7 @@ Length of the string: 25
 <td>strlen.c</td>
 <td>This function prints out the lenght of a string</td>
 </tr>
+</table>
 <h3>Project requirements</h3>
 <h4>General</h4>
 <ul>
