@@ -96,9 +96,13 @@
 <h3>Example</h3>
 <h4>Printing the length of a string</h4>
 #include <stdio.h>
+<br>
 int main()
+<br>
 {
+<br>
     char s[] = "The length of the string";
+<br>
     int i;
 
     for (i = 0; s[i] != '\0'; ++i);
@@ -109,11 +113,11 @@ int main()
 <h4>Output</h4>
 The length of the string: 24
 <h3>Prototype</h3>
-int _ printf(const char * format, ...);
+int _printf(const char *format, ...);
 <h3>Compilation</h3>
 This is what we will use to compile the code
 <br>
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format * .c
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 <h3>Files and their description</h3>
 <table>
 <tr>
