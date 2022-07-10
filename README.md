@@ -111,6 +111,16 @@ int main()
 }
 <h4>Output</h4>
 Length of the string: 25
+<h3>Files and their description</h3>
+<table>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>strlen.c</td>
+<td>This function prints out the lenght of a string</td>
+</tr>
 <h3>Project requirements</h3>
 <h4>General</h4>
 <ul>
