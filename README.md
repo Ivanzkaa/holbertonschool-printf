@@ -95,13 +95,10 @@
 </table>
 <h3>Example</h3>
 <h4>Printing the length of a string</h4>
- #include <stdio.h>
-<br>
+#include <stdio.h>
 int main()
-<br>
 {
     char s[] = "The lenght of the string.";
-<br>
     int i;
 
     for (i = 0; s[i] != '\0'; ++i);
