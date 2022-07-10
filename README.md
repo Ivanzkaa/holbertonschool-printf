@@ -1,5 +1,5 @@
 <head>
-<h1>printf.c</h1>
+<h1>Printf</h1>
 </head>
 <body>
 <h3>In this project we are creating our own printf functions and manpage writen in the C programming language. The functions the we create will produce an output of what the format specifies.</h3>
@@ -111,6 +111,8 @@ int main()
 }
 <h4>Output</h4>
 Length of the string: 25
+<h3>Prototype</h3>
+int _printf(const char *format, ...);
 <h3>Files and their description</h3>
 <table>
 <tr>
