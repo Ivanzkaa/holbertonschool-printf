@@ -95,7 +95,7 @@
 </table>
 <h3>Example</h3>
 <h4>Printing the length of a string</h4>
-#include <stdio.h>
+#include "main.h"
 <br>
 int main()
 <br>
