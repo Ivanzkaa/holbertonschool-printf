@@ -109,11 +109,11 @@ int main()
 <h4>Output</h4>
 The length of the string: 24
 <h3>Prototype</h3>
-int _printf(const char *format, ...);
+int _ printf(const char * format, ...);
 <h3>Compilation</h3>
 This is what we will use to compile the code
 <br>
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format * .c
 <h3>Files and their description</h3>
 <table>
 <tr>
@@ -123,6 +123,14 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 <tr>
 <td>strlen.c</td>
 <td>This function prints out the lenght of a string</td>
+</tr>
+<tr>
+<td>man_3_printf.c</td>
+<td>Manpage for our functions</td>
+</tr>
+<tr>
+<td>std_out.c</td>
+<td>Standard output</td>
 </tr>
 </table>
 <h3>Collaborators</h3>
