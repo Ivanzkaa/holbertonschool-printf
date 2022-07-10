@@ -128,6 +128,6 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 <h3>Collaborators</h3>
 <ul>
 <li>Ivanzka Rodriguez</li>
-<li>Jimmy Hernandez<li>
+<li>Jimmy Hernandez</li>
 </ul>
 </body>
