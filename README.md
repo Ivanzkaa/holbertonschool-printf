@@ -96,18 +96,18 @@
 <h3>Example</h3>
 <h4>Printing the length of a string</h4>
 #include <stdio.h>
-int _strlen(char *s)
+int main()
 {
-	int l = 0;
+    char s[] = "The length of the string";
+    int i;
 
-	while (s[l] != '\0')
-	{
-	l++;
-	}
-	return (l);
+    for (i = 0; s[i] != '\0'; ++i);
+    
+    printf("The length of the string: %d", i);
+    return (0);
 }
 <h4>Output</h4>
-Length of the string: 25
+The length of the string: 24
 <h3>Prototype</h3>
 int _printf(const char *format, ...);
 <h3>Compilation</h3>
