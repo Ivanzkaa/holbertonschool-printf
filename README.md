@@ -135,6 +135,26 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 <tr>
 <td>std_out.c</td>
 <td>Standard output</td>
+<tr>
+<td>print_hexadecimal.c</td>
+<td>Printing numbers in hexadecimal</td>
+</tr>
+<tr>
+<td>print_heXadecimal.c</td>
+<td>Printing numbers in hexadcimal uppercase</td>
+</tr>
+<tr>
+<td>print_octal.c</td>
+<td>Prints out in octal</td>
+</tr>
+<tr>
+<td>print_rot13.c</td>
+<td>Prints out in rot13</td>
+</tr>
+<tr>
+<td>print_char.c</td>
+<td>Prints out characters</td>
+</tr>
 </tr>
 </table>
 <h3>Collaborators</h3>
