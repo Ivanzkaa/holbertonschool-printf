@@ -1,0 +1,69 @@
+.\" Manpage for _printf.
+ 
+.\" Contact jimoem24@gmail.com to correct errors or typos.
+
+.TH man 3 "10 Jul 2022" "1.0" "_printf man page"
+
+.SH	 NAME
+
+
+_printf - print to standard output. 
+
+.SH SYNOPSIS
+
+
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+
+
+_printf function helps to print all kind of data in the standard output format.
+
+.SH Examples:
+
+
+With no parameter:
+
+
+_printf("Hello World.\n");
+Output: Hello World.
+
+With one parameter:
+
+
+_printf("Hello %s\n","World");
+Output: Hello World.		
+
+With more than one parameters:
+
+
+_printf("Hi my name is %s and I'm %d years old\n", "Franck", 33); 
+Output: Hi my name is Franck and I'm 33 years old.
+
+.SH Convertion  Specifiers:
+
+
+A character that specifies the type of conversion to be applied The conversion specifiers and their meanings are:
+
+C - Synonym for lc. Don't use.
+
+S - Synonym for ls. Don't use.
+
+% - A % is written. No arguments is converted. The complete conversion specification is '%%'.
+
+i - for intergers value.
+
+d - for double value.
+
+
+.SH BUGS
+
+
+No bugs.
+
+.SH AUTHOR
+
+
+Jimmy Hernandez Rivera (jimoem24@gmail.com)
