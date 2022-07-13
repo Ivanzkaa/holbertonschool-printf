@@ -1,175 +1,155 @@
 #include "main.h"
 /**
- * print_char - printing a char
- * @args: arguments
- * Return: 1
- **/
-int print_char(va_list *args)
+ * _bin - function to print binary
+ * @bin: list
+ * Return: the function
+ */
+int _bin(va_list bin)
 {
-	char character = va_arg(*args, int);
+	int count = 0, i;
+	int *arr;
+	unsigned int n = va_arg(bin, unsigned int);
+	unsigned int tmp = n;
 
-	write(1, &character, 1);
-	return (0);
+	while (n / 2 != 0)
+	{
+		n /= 2;
+		count++;
+	}
+	count++;
+	arr = malloc(count * sizeof(int));
+	if (arr == NULL)
+	{
+		free(arr);
+		return (0);
+	}
+	for (i = 0; i < count; i++)
+	{
+		arr[i] = tmp % 2;
+		tmp /= 2;
+	}
+	for (i = count - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+	free(arr);
+	return (count);
 }
 
 
 #include "main.h"
 /**
- * print_hexadecimal - printing the hexadecimal
- * @list: list of arguments
- * Return: the numbers printed
- **/
-int print_hexadecimal(va_list list)
+ * _oct - function to print octal
+ * @octo: list being passed
+ * Return: updated count
+ */
+int _oct(va_list octo)
 {
-	unsigned int num;
-	int len;
-	int rem_num;
-	char *hex_rep;
-	char *rev_hex;
+	int count = 0, i;
+	int *arr;
+	unsigned int n = va_arg(octo, unsigned int);
+	unsigned int tmp = n;
 
-	num = va_arg(list, unsigned int);
-
-	if (num == 0)
-		return (_write_char('0'));
-	if (num < 1)
-		return (-1);
-	len = base_len(num, 16);
-	hex_rep = malloc(sizeof(char) * len + 1);
-	if (hex_rep == NULL)
-		return (-1);
-	for (len = 0; num > 0; len++)
+	while (n / 8 != 0)
 	{
-		rem_num = num % 16;
-		if (rem_num > 9)
+		n /= 8;
+		count++;
+	}
+	count++;
+	arr = malloc(count * sizeof(int));
+	for (i = 0; i < count; i++)
+	{
+		arr[i] = tmp % 8;
+		tmp /= 8;
+	}
+	for (i = count - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+	free(arr);
+	return (count);
+}
+
+
+#include "main.h"
+/**
+ * _rot13 - prints rot13
+ * @rot: list being passed
+ * Return: count of chars
+ */
+int _rot13(va_list rot)
+{
+	int a, count;
+	char *s;
+
+	a = count = 0;
+	s = va_arg(rot, char *);
+
+	if (s == NULL)
+		return (-1);
+	while (s[a] != '\0')
+	{
+		if ((s[a] >= 'a' && s[a] <= 'z') ||
+				(s[a] >= 'A' && s[a] <= 'Z'))
 		{
-			rem_num = hex_check(rem_num, 'x');
-			hex_rep[len] = rem_num;
+			if ((s[a] >= 'n' && s[a] <= 'z') ||
+					(s[a] >= 'N' && s[a] <= 'Z'))
+				count = count + _putchar(s[a] - 13);
+			else
+				count = count + _putchar(s[a] + 13);
 		}
 		else
-			hex_rep[len] = rem_num + 48;
-		num = num / 16;
+			count = count + _putchar(s[a]);
+		a++;
 	}
-	hex_rep[len] = '\0';
-	rev_hex = rev_string(hex_rep);
-	if (rev_hex == NULL)
-		return (-1);
-	write_base(rev_hex);
-	free(hex_rep);
-	free(rev_hex);
-	return (len);
+	return (count);
 }
 
 
 #include "main.h"
 /**
- * print_heXadecimal - printing the hexadecimals uppercase
- * @list: list of arguments
- * Return: the numbers printed
- **/
-int print_heXadecimal(va_list list)
-{
-	unsigned int num;
-	int len;
-	int rem_num;
-	char *hex_rep;
-	char *rev_hex;
-
-	num = va_arg(list, unsigned int);
-
-	if (num == 0)
-		return (_write_char('0'));
-	if (num < 1)
-		return (-1);
-	len = base_len(num, 16);
-	hex_rep = malloc(sizeof(char) * len + 1);
-	if (hex_rep == NULL)
-		return (-1);
-	for (len = 0; num > 0; len++)
-	{
-		rem_num = num % 16;
-		if (rem_num > 9)
-		{
-			rem_num = hex_check(rem_num, 'X');
-			hex_rep[len] = rem_num;
-		}
-		else
-			hex_rep[len] = rem_num + 48;
-		num = num / 16;
-	}
-	hex_rep[len] = '\0';
-	rev_hex = rev_string(hex_rep);
-	if (rev_hex == NULL)
-		return (-1);
-	write_base(rev_hex);
-	free(hex_rep);
-	free(rev_hex);
-	return (len);
-}
-
-
-#include "main.h"
-/**
- * print_octal - printing numbers in octal base
- * @list: list of arguments
- * Return: the number of the output
- **/
-int print_octal(va_list list)
-{
-	unsigned int num;
-	int len;
-	char *octal_rep;
-	char *rev_str;
-
-	num = va_arg(list, unsigned int);
-
-	if (num == 0)
-		return (_write_char('0'));
-	if (num < 1)
-		return (-1);
-	len = base_len(num, 8);
-
-	octal_rep = malloc(sizeof(char) * len + 1);
-	if (octal_rep == NULL)
-		return (-1);
-	for (len = 0; num > 0; len++)
-	{
-		octal_rep[len] = (num % 8) + 48;
-		num = num / 8;
-
-	}
-	octal_rep[len] = '\0';
-	rev_str = rev_string(octal_rep);
-	if (rev_str == NULL)
-		return (-1);
-
-	write_base(rev_str);
-	free(octal_rep);
-	free(rev_str);
-	return (len);
-}
-
-
-#include "main.h"
-/**
- * print_reversed - printing a reversed string
- * @arg: arguments
- * Return: the characters printed
- **/
-int print_reversed(va_list arg)
+ * str - prints string to stdout
+ * @string: list
+ * Return: number of char
+ */
+int str(va_list string)
 {
 	int len;
 	char *str;
-	char *ptr;
 
-	str = va_arg(arg, char *);
+	str = va_arg(string, char *);
+
 	if (str == NULL)
-		return (-1);
-	ptr = rev_string(str);
-	if (ptr == NULL)
-		return (-1);
-	for (len = 0; ptr[len] != '\0'; len++)
-		_write_char(ptr[len]);
-	free(ptr);
+		str = "(null)";
+	len = 0;
+
+	while (str[len] != '\0')
+		len = len + _putchar(str[len]);
 	return (len);
 }
 
+
+#include "main.h"
+/**
+ * _ui - unsigned int print to stdout
+ * @unsign: list being passed
+ * Return: char count
+ */
+int _ui(va_list unsign)
+{
+	unsigned int n;
+	int expo = 1;
+	int len = 0;
+
+	n = va_arg(unsign, unsigned int);
+
+	while (n / expo > 9)
+		expo *= 10;
+	while (expo != 0)
+	{
+		len = len + _putchar(n / expo + '0');
+		n = n % expo;
+		expo = expo / 10;
+	}
+	return (len);
+}
