@@ -1,114 +1,99 @@
 #include "main.h"
 /**
- * print_rot13 - converts string to rot13
- * @list: list of arguments
- * Return: converted string
- **/
-int print_rot13(va_list list)
+ * ch - function to return char
+ * @character: list given
+ * Return: number of char printed
+ */
+int ch(va_list character)
 {
-	int i;
-	int x;
-	char *str;
-	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	str = va_arg(list, char *);
-	if (str == NULL)
-		return (-1);
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		for (x = 0; x <= 52; x++)
-		{
-			if (str[i] == s[x])
-			{
-				_write_char(u[x]);
-				break;
-			}
-		}
-		if (x == 53)
-			_write_char(str[i]);
-	}
-	return (i);
+	return (_putchar(va_arg(character, int)));
 }
 
 
 #include "main.h"
 /**
- * _strlen - prints out the length of the string
- * @s: string
- * Return: the string
- **/
-int _strlen(char *s)
+ * _hex_l - printing lower case hexa
+ * @hexa: argument recieved
+ * Return: num of char printed
+ */
+int _hex_l(va_list hexa)
 {
-	int l = 0;
-
-	while (s[l] != '\0')
-	{
-		l++;
-	}
-	return (l);
+	return (_hex_str(va_arg(hexa, unsigned int), 16, 'a'));
 }
 
 
 #include "main.h"
 /**
- * print_hex - prints number as hex
- * @num: unsigned int
- * Return: the numbers
- **/
-int print_hex(unsigned int num)
+ * _hex_u - printing upper case hexa
+ * @hexa: argument recieved
+ * Return: num of char printed
+ */
+int _hex_u(va_list hexa)
 {
-	if (num <= 15)
+	return (_hex_str(va_arg(hexa, unsigned int), 16, 'A'));
+}
+
+#include "main.h"
+/**
+ * _int - function to print int
+ * @integ: list printed
+ * Return: Return count
+ */
+int _int(va_list integ)
+{
+	int a, expo = 1, len = 0;
+	unsigned int n;
+
+	a = va_arg(integ, int);
+
+	if (a < 0)
 	{
-		if (num <= 9)
-			return (_putchar(num + '0'));
-		else
-			return (_putchar(num + 'a' - 10));
+		len = len + _putchar('-');
+		n = a * -1;
 	}
 	else
+		n = a;
+	while (n / expo > 9)
+		expo *= 10;
+
+	while (expo != 0)
 	{
-		if (num % 16 <= 9)
-			return (print_hex(num / 16) + _putchar(num % 16 + '0'));
-		else
-			return (print_hex(num / 16) + _putchar(num % 16 + 87));
+		len = len + _putchar(n / expo + '0');
+		n = n % expo;
+		expo = expo / 10;
 	}
-	return (0);
+	return (len);
 }
+
 
 #include "main.h"
 /**
- * print_heXadecimaln - printing a num as a hex
- * @n: num
- * Return: the outcome of the numbers
- **/
-int print_heXadecimaln(unsigned int n)
+ * _hex_str - converts the number from base 10 to hex
+ * @n: number to be converted
+ * @hex: base of 16 being passed
+ * @alpha: Char 'A' to 'F' or 'a' to 'f'
+ * Return: number of chars printed
+ */
+int _hex_str(unsigned int n, unsigned int hex, char alpha)
 {
-	if (num <= 15)
-	{
-		if (num <= 9)
-			return (_putchar(num + '0'));
-		else
-			return (_putchar(num + 'A' - 10));
-	}
+	unsigned int a = n % hex;
+	unsigned int b = n / hex;
+	char c;
+
+	if (a > 10)
+		c = (a - 10) + alpha;
 	else
+		c = a + '0';
+	if (b == 0)
 	{
-		if (num % 16 <= 9)
-			return (print_heXadecimaln(num / 16) + _putchar(num % 16 + '0'));
-		else
-			return (print_heXadecimaln(num / 16) + _putchar(num % 16 + 55));
+		return (_putchar(c));
 	}
-	return (0);
-}
-
-
-#include "main.h"
-/**
- * _putchar - prints out character
- * @c: character
- * Return: will print char if true
- **/
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
+	if (b < hex)
+	{
+		if (b > 10)
+			return (_putchar(b - 10 + alpha) + _putchar(c));
+		return (_putchar(b + '0') + _putchar(c));
+	}
+	return (_hex_str(b, hex, alpha) + _putchar(c));
 }
 
